@@ -48,3 +48,8 @@ Description: "This extension provides the certified reference material used to c
 * extension[valueCodingElement].value[x] from CertifiedReferenceMaterialVS (extensible)
 // * extension[valueCoding] from CalibratorValueSet (extensible)
 * extension[valueReferenceElement].value[x] only Reference(Substance)
+
+Invariant: crm-1
+Description: "ObservationCertifiedReferenceMaterial should have either a valueCoding or a valueReference"
+Expression: "ObservationCertifiedReferenceMaterial.extension[valueCodingElement].exists() xor ObservationCertifiedReferenceMaterial.extension[valueReferenceElement].exists()"
+Severity: #warning
