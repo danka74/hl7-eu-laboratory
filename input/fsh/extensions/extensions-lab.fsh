@@ -45,5 +45,6 @@ Description: "This extension provides the certified reference material used to c
     valueCodingElement 0..* and
     valueReferenceElement 0..*
 * extension[valueCodingElement].value[x] only Coding
+* extension[valueCodingElement].value[x] from CertifiedReferenceMaterialVS (extensible)
 // * extension[valueCoding] from CalibratorValueSet (extensible)
 * extension[valueReferenceElement].value[x] only Reference(Substance)
