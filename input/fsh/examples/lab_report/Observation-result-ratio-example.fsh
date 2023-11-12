@@ -19,5 +19,3 @@ Usage: #example
 * valueRatio.denominator.system = $ucum
 * valueRatio.denominator.code = $ucum#h
 * valueRatio.denominator.unit = "h"
-// the example makes no clinical sense...
-* extension[ObservationCertifiedReferenceMaterial].extension[valueCodingElement].valueCoding = CertifiedReferenceMaterialCS#WHO-IRP-13/100 
