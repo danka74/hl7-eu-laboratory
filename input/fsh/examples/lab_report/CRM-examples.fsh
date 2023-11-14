@@ -11,7 +11,7 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[valueCodingElement].valueCoding = CertifiedReferenceMaterialCS#IS_66/304 
+* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#IS_66_304 
 * valueQuantity.value = 50
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#m[iU]/L
@@ -30,7 +30,7 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[valueCodingElement].valueCoding = CertifiedReferenceMaterialCS#IS_19/118 
+* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#IS_19_118 
 * valueQuantity.value = 25
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#ug/L
@@ -50,7 +50,7 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[valueCodingElement].valueCoding = CertifiedReferenceMaterialCS#ERM-DA470k/IFCC
+* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#ERM-DA470k_IFCC
 * valueQuantity.value = 45
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#g/L
@@ -70,8 +70,21 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[valueCodingElement].valueCoding = CertifiedReferenceMaterialCS#IS_17/100 
+* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#IS_17_100 
 * valueQuantity.value = 6.8
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#ug/L
 * valueQuantity.unit = "µg/L"
+* device = Reference(urn:uuid:47cca071-b309-41d0-b664-f4266d1358d0)
+
+Instance: CRMObservtionResult4DeviceMetric
+InstanceOf: DeviceMetric
+Title: "DeviceMetric with with certified reference material 4"
+Description: "Reference to IS 17/100 (https://www.nibsc.org/documents/ifu/17-100.pdf)"
+Usage: #example
+
+* id = "47cca071-b309-41d0-b664-f4266d1358d0"
+* category = #setting // ??
+* type = #MDC_ATTR_METRIC_CALIB
+* calibration[+].state = #calibrated
+* calibration[=].extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#IS_17_100 

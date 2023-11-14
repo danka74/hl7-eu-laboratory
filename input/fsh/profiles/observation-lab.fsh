@@ -19,8 +19,8 @@ This observation may represent the result of a simple laboratory test such as he
 * . ^comment = "Represents either a lab simple observation or the group of observations produced by a laboratory study."
 
 // use of extension for certified reference material
-* extension contains ObservationCertifiedReferenceMaterial named certified-reference-material 0..1
-* extension[certified-reference-material]
+// * extension contains ObservationCertifiedReferenceMaterial named certified-reference-material 0..1
+// * extension[certified-reference-material]
 
 * category only $CodeableConcept-uv-ips
 * category ^slicing.discriminator.type = #pattern

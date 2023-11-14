@@ -39,17 +39,16 @@ Title:  "Certified Reference Material"
 Description: "This extension provides the certified reference material used to calibrate the observation."
 // publisher, contact, and other metadata here using caret (^) syntax (omitted)
 * ^context[+].type = #element
-* ^context[=].expression = "Observation"
+* ^context[=].expression = "Observation|DeviceMetric.calibration"
 * ^url = "http://hl7.eu/fhir/StructureDefinition/certified-reference-material"
 * extension contains 
-    valueCodingElement 0..* and
-    valueReferenceElement 0..*
-* extension[valueCodingElement].value[x] only Coding
-* extension[valueCodingElement].value[x] from CertifiedReferenceMaterialVS (extensible)
-// * extension[valueCoding] from CalibratorValueSet (extensible)
-* extension[valueReferenceElement].value[x] only Reference(Substance)
+    concept 0..1 and
+    reference 0..1
+* extension[concept].value[x] only Coding
+* extension[concept].value[x] from CertifiedReferenceMaterialVS (extensible)
+* extension[reference].value[x] only Reference(Substance)
 
 Invariant: crm-1
 Description: "ObservationCertifiedReferenceMaterial should have either a valueCoding or a valueReference"
-Expression: "ObservationCertifiedReferenceMaterial.extension[valueCodingElement].exists() xor ObservationCertifiedReferenceMaterial.extension[valueReferenceElement].exists()"
+Expression: "ObservationCertifiedReferenceMaterial.extension[concept].exists() xor ObservationCertifiedReferenceMaterial.extension[reference].exists()"
 Severity: #warning
