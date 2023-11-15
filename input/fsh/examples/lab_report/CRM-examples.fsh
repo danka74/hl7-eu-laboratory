@@ -11,7 +11,7 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#IS_66_304 
+* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_66_304 
 * valueQuantity.value = 50
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#m[iU]/L
@@ -25,12 +25,12 @@ Usage: #example
 
 * id = "68b3cdb7-5eaa-43b0-8930-4f1df1ef0c5e" 
 * status = #final
-* code.coding[+] = http://loinc.org#20448-7	"Insulin [Units/volume] in Serum or Plasma"
+* code.coding[+] = http://loinc.org#2276-4 "Ferritin [Mass/volume] in Serum or Plasma"
 * code.coding[+] = http://npu-terminology.org#NPU19763 "P—Ferritin; mass c. = ? µg/L"
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#IS_19_118 
+* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_19_118 
 * valueQuantity.value = 25
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#ug/L
@@ -50,7 +50,7 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#ERM-DA470k_IFCC
+* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $jctlm#ERM-DA470k_IFCC
 * valueQuantity.value = 45
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#g/L
@@ -70,7 +70,7 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#IS_17_100 
+* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_17_100 
 * valueQuantity.value = 6.8
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#ug/L
@@ -87,4 +87,4 @@ Usage: #example
 * category = #setting // ??
 * type = #MDC_ATTR_METRIC_CALIB
 * calibration[+].state = #calibrated
-* calibration[=].extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = CertifiedReferenceMaterialCS#IS_17_100 
+* calibration[=].extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_17_100 

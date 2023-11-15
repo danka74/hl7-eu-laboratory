@@ -1,4 +1,4 @@
-CodeSystem: CertifiedReferenceMaterialCS
+/* CodeSystem: CertifiedReferenceMaterialCS
 Id: certified-reference-material-code-system
 Title: "Certified reference material Code System"
 Description: """
@@ -25,10 +25,17 @@ GN
 * #IS_19_118 "IS 19/118" "Ferritin https://nibsc.org/documents/ifu/19-118.pdf"
 * #ERM-DA470k_IFCC "ERM-DA470k/IFCC" "Albumin in human serum https://www.jctlmdb.org/#/app/home"
 * #IS_17_100 "IS 17/100" "Prostate-specific antigen https://www.nibsc.org/documents/ifu/17-100.pdf"
+*/
+
+Alias: $nibsc = http://nibsc.org
+Alias: $jctlm = http://jctlm.org
 
 
 ValueSet: CertifiedReferenceMaterialVS
 Id: certified-reference-material-value-set
 Title: "Certified reference material Value Set"
 Description: "Value set of all codes of the Certified Reference Material code system"
-* include codes from system CertifiedReferenceMaterialCS
+* include $nibsc#IS_66_304 "IS 66/304 Human insulin"
+* include $nibsc#IS_19_118 "IS 19/118 Ferritin"
+* include $jctlm#ERM-DA470k_IFCC "ERM-DA470k/IFCC Albumin in human serum"
+* include $nibsc#IS_17_100 "IS 17/100 Prostate-specific antigen"
