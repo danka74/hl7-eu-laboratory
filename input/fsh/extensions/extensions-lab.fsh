@@ -45,7 +45,7 @@ Description: "This extension provides the certified reference material used to c
     concept 0..1 and
     reference 0..1
 * extension[concept].value[x] only Coding
-* extension[concept].value[x] from CertifiedReferenceMaterialVS (extensible)
+* extension[concept].value[x] from CertifiedReferenceMaterialVS (preferred)
 * extension[reference].value[x] only Reference(Substance)
 
 Invariant: crm-1
