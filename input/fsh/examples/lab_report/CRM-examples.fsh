@@ -11,18 +11,29 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_66_304 
+// * extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_66_304 
 * valueQuantity.value = 50
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#m[iU]/L
 * valueQuantity.unit = "mIU/L"
+* device = Reference(urn:uuid:aa91f881-542e-460b-a56b-cde2928f49b7)
+
+Instance: CRMObservtionResult1DeviceMetric
+InstanceOf: DeviceMetric
+Title: "DeviceMetric with with certified reference material 1"
+Description: "Reference to IS 66/304 (https://www.nibsc.org/documents/ifu/66-304.pdf)"
+Usage: #example
+* id = "aa91f881-542e-460b-a56b-cde2928f49b7"
+* category = #setting // ??
+* type = #MDC_ATTR_METRIC_CALIB
+* calibration[+].state = #calibrated
+* calibration[=].extension[ObservationCertifiedReferenceMaterial].valueCodeableConcept = $nibsc#IS_66_304 
 
 Instance: CRMObservtionResult2
 InstanceOf: ObservationResultsLaboratoryEu
 Title: "Observation with certified reference material 2"
 Description: "The concentration of ferritin in a sample is 25 µg/L with reference to IS 19/118 (https://nibsc.org/documents/ifu/19-118.pdf)"
 Usage: #example
-
 * id = "68b3cdb7-5eaa-43b0-8930-4f1df1ef0c5e" 
 * status = #final
 * code.coding[+] = http://loinc.org#2276-4 "Ferritin [Mass/volume] in Serum or Plasma"
@@ -30,13 +41,25 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_19_118 
+// * extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_19_118 
 * valueQuantity.value = 25
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#ug/L
 * valueQuantity.unit = "µg/L"
+* device = Reference(urn:uuid:8eba7e2f-08a1-4497-aab0-2aa98d58b4dd)
 
-// 
+Instance: CRMObservtionResult2DeviceMetric
+InstanceOf: DeviceMetric
+Title: "DeviceMetric with with certified reference material 2"
+Description: "Reference to IS 19/118 (https://nibsc.org/documents/ifu/19-118.pdf)"
+Usage: #example
+* id = "8eba7e2f-08a1-4497-aab0-2aa98d58b4dd"
+* category = #setting // ??
+* type = #MDC_ATTR_METRIC_CALIB
+* calibration[+].state = #calibrated
+* calibration[=].extension[ObservationCertifiedReferenceMaterial].valueCodeableConcept = $nibsc#IS_19_118 
+
+
 Instance: CRMObservtionResult3
 InstanceOf: ObservationResultsLaboratoryEu
 Title: "Observation with certified reference material 3"
@@ -50,13 +73,25 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $jctlm#ERM-DA470k_IFCC
+//* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $jctlm#ERM-DA470k_IFCC
 * valueQuantity.value = 45
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#g/L
 * valueQuantity.unit = "g/L"
+* device = Reference(urn:uuid:88dd6d32-d0a8-4688-9979-dbeb33e16394)
 
-// 
+Instance: CRMObservtionResult3DeviceMetric
+InstanceOf: DeviceMetric
+Title: "DeviceMetric with with certified reference material 3"
+Description: "Reference to ERM-DA470k/IFCC (https://www.jctlmdb.org/#/app/home)"
+Usage: #example
+* id = "88dd6d32-d0a8-4688-9979-dbeb33e16394"
+* category = #setting // ??
+* type = #MDC_ATTR_METRIC_CALIB
+* calibration[+].state = #calibrated
+* calibration[=].extension[ObservationCertifiedReferenceMaterial].valueCodeableConcept = $jctlm#ERM-DA470k_IFCC
+
+
 Instance: CRMObservtionResult4
 InstanceOf: ObservationResultsLaboratoryEu
 Title: "Observation with certified reference material 4"
@@ -70,7 +105,6 @@ Usage: #example
 * effectiveDateTime = "2023-03-27T11:24:26+01:00"
 * subject = Reference(urn:uuid:de17bfd2-8d73-45fa-b0bb-8eb0e463ddb8)
 * performer[+].display = "Jan Laborant" // ToDo: consider cardinality
-* extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_17_100 
 * valueQuantity.value = 6.8
 * valueQuantity.system = $ucum
 * valueQuantity.code = $ucum#ug/L
@@ -82,9 +116,8 @@ InstanceOf: DeviceMetric
 Title: "DeviceMetric with with certified reference material 4"
 Description: "Reference to IS 17/100 (https://www.nibsc.org/documents/ifu/17-100.pdf)"
 Usage: #example
-
 * id = "47cca071-b309-41d0-b664-f4266d1358d0"
 * category = #setting // ??
 * type = #MDC_ATTR_METRIC_CALIB
 * calibration[+].state = #calibrated
-* calibration[=].extension[ObservationCertifiedReferenceMaterial].extension[concept].valueCoding = $nibsc#IS_17_100 
+* calibration[=].extension[ObservationCertifiedReferenceMaterial].valueCodeableConcept = $nibsc#IS_17_100 
